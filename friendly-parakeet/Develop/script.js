@@ -88,7 +88,7 @@ function generatePassword() {
     "|",
     "~",
   ];
-  
+
   var selectedArray = [];
 
   var passwordLength = getPasswordLength();
@@ -122,6 +122,28 @@ if (specialCharacters) {
 }
 
 var passwordString = "";
+
+for (var i = 0; i < passwordLength; i++) {
+  passwordString += selectedArray[Math.floor(Math.random() * (selectedArray.length))];
+}
+
+return passwordString = "";
+
+
+function getPasswordLength() {
+  var userChoice = 0;
+  while ((userChoice < 8) || (userChoice > 128)) {
+    userChoice = parseInt(window.prompt("Enter the number of characters between 8 and 128: "));
+    if (isNaN(userChoice)) {
+      userChoice = 0;
+    }
+  }
+
+  return userChoice;
+}
+
+
+
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
