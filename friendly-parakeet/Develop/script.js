@@ -10,6 +10,20 @@ function generatePassword() {
 
   var charTypeSelected = false;
 
+  while (charTypeSelected == false) {
+    var lowerCase = getChoice("lowercase");
+    var upperCase = getChoice("uppercase");
+    var numericCharacters = getChoice("numeric");
+    var specialCharacters = getChoice("special");
+    if ((lowerCase) || (upperCase) || (numericCharacters) || (specialCharacters)) {
+      charTypeSelected = true;
+    } else {
+      window.alert("You must select at least one character type.")
+    }
+  }
+
+  
+
   // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
